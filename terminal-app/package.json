@@ -1,0 +1,27 @@
+{
+  "name": "pet_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dima3kurach/NodeJS.git"
+  },
+  "author": "Kurach_Dmytro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dima3kurach/NodeJS/issues"
+  },
+  "homepage": "https://github.com/dima3kurach/NodeJS#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "validator": "^10.8.0",
+    "yargs": "^12.0.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
