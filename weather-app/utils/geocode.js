@@ -5,16 +5,16 @@ const geocode = (address, callback) => {
     address
   )}.json?access_token=pk.eyJ1IjoiZGltYTNrdXJhY2giLCJhIjoiY2w2emdyaXp6MDQ5ZzNycGdyNjRmaXh3aCJ9.JIZUZuhLdFDfo8s-9SkZ0Q&limit=1`;
 
-  request({ url, json: true }, (rej, res) => {
+  request({ url, json: true }, (rej, { body }) => {
     if (rej) {
       return callback('Something went wrong!');
     }
 
-    if (!res.body.features.length) {
+    if (!body.features.length) {
       return callback('No matching results!');
     }
 
-    callback(undefined, res.body.features[0].center);
+    callback(undefined, body.features[0].center);
   });
 };
 

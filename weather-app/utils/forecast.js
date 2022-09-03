@@ -5,18 +5,16 @@ const forecast = (coordinates, callback) => {
     ','
   )}&units=f`;
 
-  request({ url, json: true }, (rej, res) => {
+  request({ url, json: true }, (rej, { body }) => {
     if (rej) {
       return callback('Something went wrong!');
     }
 
-    if (res.body.error) {
+    if (body.error) {
       return callback('Unable to find location!');
     }
 
-    const weather = res.body.current;
-
-    callback(undefined, weather);
+    callback(undefined, body.current);
   });
 };
 
