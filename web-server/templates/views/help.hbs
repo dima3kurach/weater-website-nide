@@ -9,7 +9,10 @@
   <script src="/js/app.js" defer></script>
 </head>
 <body>
-  <h1>{{title}}</h1>
-  <p>{{message}}</p>
+  <div>
+    {{>header}}
+    <p>{{message}}</p>
+  </div>
+  {{>footer}}
 </body>
 </html>

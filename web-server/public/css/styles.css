@@ -1,7 +1,33 @@
-h1 {
-  color: red;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  font-family: arial, sans-serif;
+  color: #333;
+  box-sizing: content-box;
+  width: 650px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
-img {
-  width: 320px;
+header {
+  margin: 16px 0 32px 0;
+}
+
+header a {
+  color: #888;
+  margin: 0 16px 0 0;
+  text-decoration: none;
+}
+
+footer {
+  color: #888;
+  border-top: 1px solid #eee;
+  margin: 32px 0 16px 0;
+  padding: 16px 0;
+}
+
+.portrait {
+  width: 50%;
 }
