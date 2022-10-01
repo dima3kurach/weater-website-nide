@@ -8,7 +8,7 @@ const forecast = require('./utils/forecast');
 const app = express();
 
 // Define paths for Express config
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const PUBLIC = path.join(__dirname, '../public');
 const VIEWS = path.join(__dirname, '../templates/views');
 const PARTIALS = path.join(__dirname, '../templates/partials');
