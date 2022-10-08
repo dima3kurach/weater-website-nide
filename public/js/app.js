@@ -8,19 +8,10 @@ const weather = document.querySelector('p#weather');
 
 const getWeather = async (location) => {
   try {
-    const geocodeResult = await fetch(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
-        location
-      )}.json?access_token=pk.eyJ1IjoiZGltYTNrdXJhY2giLCJhIjoiY2w2emdyaXp6MDQ5ZzNycGdyNjRmaXh3aCJ9.JIZUZuhLdFDfo8s-9SkZ0Q&limit=1`
-    );
-    const coordinates = (await geocodeResult.json()).features[0].center;
+    const url = `http://localhost:3000/weather?address=${location}`;
 
-    const weatherResult = await fetch(
-      `http://api.weatherstack.com/current?access_key=466cb1970e3efbba6ae1beabf1297abb&query=${coordinates.join(
-        ','
-      )}&units=f`
-    );
-    const weather = (await weatherResult.json()).current;
+    const result = await fetch(url);
+    const weather = (await result.json()).forecast;
 
     return `${weather.weather_descriptions[0]}. It is currently ${weather.temperature} degrees out. It feels like ${weather.feelslike} degrees out.`;
   } catch (e) {
@@ -40,7 +31,7 @@ form.addEventListener('submit', async (e) => {
     const location = input.value;
     const forecast = await getWeather(location);
 
-    place.textContent = location;
+    place.textContent = location.charAt(0).toUpperCase() + location.slice(1);
     weather.textContent = forecast;
   } catch (e) {
     place.textContent = e;
