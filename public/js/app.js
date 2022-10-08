@@ -8,7 +8,7 @@ const weather = document.querySelector('p#weather');
 
 const getWeather = async (location) => {
   try {
-    const url = `http://localhost:3000/weather?address=${location}`;
+    const url = `/weather?address=${location}`;
 
     const result = await fetch(url);
     const weather = (await result.json()).forecast;
